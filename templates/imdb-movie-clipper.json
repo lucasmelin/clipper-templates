@@ -46,7 +46,7 @@
     },
     {
       "name": "rating",
-      "value": "{{schema:@Movie:review.reviewRating.ratingValue}}",
+      "value": "",
       "type": "number"
     },
     {
