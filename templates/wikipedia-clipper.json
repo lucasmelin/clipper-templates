@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "Wikipedia",
+  "behavior": "create",
+  "noteContentFormat": "# {{title|split:\" - Wikipedia\"|first}}\n\n{{selectorHtml:#mw-content-text|remove_html:(\".navbox,.printfooter,.side-box,.infobox\")|markdown}}",
+  "properties": [
+    {
+      "name": "categories",
+      "value": "[[Clippings]]",
+      "type": "multitext"
+    },
+    {
+      "name": "title",
+      "value": "{{title|split:\\\" - Wikipedia\\\"|first}}",
+      "type": "text"
+    },
+    {
+      "name": "source",
+      "value": "{{url}}",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "value": "[[Wikipedia]]",
+      "type": "multitext"
+    },
+    {
+      "name": "created",
+      "value": "{{date}}",
+      "type": "date"
+    },
+    {
+      "name": "description",
+      "value": "{{schema:@Article:headline}}",
+      "type": "text"
+    },
+    {
+      "name": "tags",
+      "value": "clippings, wikipedia",
+      "type": "multitext"
+    }
+  ],
+  "triggers": ["/^https:\\/\\/[a-z-.]+\\.wikipedia\\.org\\/wiki\\/.*$/"],
+  "noteNameFormat": "{{title|split:\" - Wikipedia\"|first}}",
+  "path": "04 - Resources"
+}

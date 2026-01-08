@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "Goodreads",
+  "behavior": "create",
+  "noteContentFormat": "# {{title}}\n\n{{selector:.BookPageMetadataSection__description}}",
+  "properties": [
+    {
+      "name": "categories",
+      "value": "[[Books]]",
+      "type": "multitext"
+    },
+    {
+      "name": "title",
+      "value": "{{selector:h1[data-testid='bookTitle']?aria-label|split:\\\"Book title: \\\"|slice:1}}",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "value": "{{selector:.ContributorLink__name|unique|wikilink|join}}",
+      "type": "multitext"
+    },
+    {
+      "name": "genre",
+      "value": "{{selector:.BookPageMetadataSection__genres .BookPageMetadataSection__genreButton|wikilink|join}}",
+      "type": "multitext"
+    },
+    {
+      "name": "pages",
+      "value": "{{selector:p[data-testid='pagesFormat']|split:\\\" pages\\\"|slice:0}}",
+      "type": "number"
+    },
+    {
+      "name": "year",
+      "value": "{{selector:p[data-testid='publicationInfo']|replace:(\\\"Published \\\",\\\"First published \\\":\\\"\\\")|date:\\\"YYYY\\\"}}",
+      "type": "number"
+    },
+    {
+      "name": "scoreGoodreads",
+      "value": "{{selector:.RatingStatistics__rating|first}}",
+      "type": "number"
+    },
+    {
+      "name": "rating",
+      "value": "",
+      "type": "number"
+    },
+    {
+      "name": "cover",
+      "value": "{{selector:.BookCover__image .ResponsiveImage?src|first}}",
+      "type": "text"
+    },
+    {
+      "name": "isbn",
+      "value": "{{schema:isbn}}",
+      "type": "text"
+    },
+    {
+      "name": "language",
+      "value": "{{schema:inLanguage}}",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "value": "{{date}}",
+      "type": "date"
+    },
+    {
+      "name": "tags",
+      "value": "books, to-read",
+      "type": "multitext"
+    }
+  ],
+  "triggers": [
+    "/^https:\\/\\/www\\.goodreads\\.com\\/book\\/show\\/\\d*\\S*$/"
+  ],
+  "noteNameFormat": "{{selector:.BookPageTitleSection__title h1}}",
+  "path": "04 - Resources/Media"
+}

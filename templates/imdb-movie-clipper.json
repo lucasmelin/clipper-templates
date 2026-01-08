@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "IMDB movie",
+  "behavior": "create",
+  "noteContentFormat": "# {{schema:@Movie:name}}\n\n{{selector:span[data-testid=\"plot-xl\"]}}",
+  "properties": [
+    {
+      "name": "categories",
+      "value": "[[Movies]]",
+      "type": "multitext"
+    },
+    {
+      "name": "genre",
+      "value": "{{schema:genre|wikilink|join}}",
+      "type": "multitext"
+    },
+    {
+      "name": "imdbId",
+      "value": "{{meta:property:imdb:pageConst}}",
+      "type": "text"
+    },
+    {
+      "name": "cover",
+      "value": "{{image}}",
+      "type": "text"
+    },
+    {
+      "name": "director",
+      "value": "{{description|split:\\\"Directed by \\\"|slice:1|split:\\\". With\\\"|first|split:\\\", \\\"|wikilink|join}}",
+      "type": "multitext"
+    },
+    {
+      "name": "cast",
+      "value": "{{selector:.ipc-inline-list a[href*='name']|unique|wikilink|join}}",
+      "type": "multitext"
+    },
+    {
+      "name": "runtime",
+      "value": "{{meta:property:og:description|split:\\\" | \\\"|first}}",
+      "type": "text"
+    },
+    {
+      "name": "year",
+      "value": "{{schema:datePublished|split:\\\\\\\\\"-\\\\\\\\\"|slice:0,1}}",
+      "type": "number"
+    },
+    {
+      "name": "rating",
+      "value": "{{schema:@Movie:review.reviewRating.ratingValue}}",
+      "type": "number"
+    },
+    {
+      "name": "scoreImdb",
+      "value": "{{schema:@Movie:aggregateRating.ratingValue}}",
+      "type": "number"
+    },
+    {
+      "name": "last",
+      "value": "",
+      "type": "date"
+    },
+    {
+      "name": "created",
+      "value": "{{date}}",
+      "type": "date"
+    },
+    {
+      "name": "tags",
+      "value": "movies, reviews, to-watch",
+      "type": "multitext"
+    },
+    {
+      "name": "plot",
+      "value": "{{selector:span[data-testid=\\\"plot-xl\\\"]}}",
+      "type": "text"
+    },
+    {
+      "name": "contentRating",
+      "value": "{{schema:@Movie:contentRating}}",
+      "type": "text"
+    },
+    {
+      "name": "title",
+      "value": "{{schema:@Movie:name}} ({{schema:datePublished|split:\\\\\\\\\"-\\\\\\\\\"|slice:0,1|date:\\\"YYYY\\\"}})",
+      "type": "text"
+    }
+  ],
+  "triggers": ["/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+\\/?\\S*$/"],
+  "noteNameFormat": "{{schema:@Movie:name}} ({{schema:datePublished|split:\\\\\\\"-\\\\\\\"|slice:0,1|date:\"YYYY\"}})",
+  "path": "04 - Resources/Media"
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "Steam Game",
+  "behavior": "create",
+  "noteContentFormat": "# {{title|split:\" on Steam\"|first}}\n\n{{description}}",
+  "properties": [
+    {
+      "name": "categories",
+      "value": "[[Games]]",
+      "type": "multitext"
+    },
+    {
+      "name": "developer",
+      "value": "{{selector:#developers_list a|unique|wikilink|join}}",
+      "type": "multitext"
+    },
+    {
+      "name": "publisher",
+      "value": "{{selector:.steamdb_dev_pub_link_container:last-of-type div:last-of-type a|unique|wikilink|join}}",
+      "type": "multitext"
+    },
+    {
+      "name": "genre",
+      "value": "{{selector:a.app_tag|unique|wikilink|join}}",
+      "type": "multitext"
+    },
+    {
+      "name": "steamId",
+      "value": "{{url|split:\\\"/\\\"|slice:4,5}}",
+      "type": "text"
+    },
+    {
+      "name": "year",
+      "value": "{{selector:.release_date .date|date:(\\\"YYYY\\\", \\\"DD MMM, YYYY\\\")}}",
+      "type": "number"
+    },
+    {
+      "name": "system",
+      "value": "Steam",
+      "type": "text"
+    },
+    {
+      "name": "rating",
+      "value": "",
+      "type": "number"
+    },
+    {
+      "name": "created",
+      "value": "{{date}}",
+      "type": "date"
+    },
+    {
+      "name": "tags",
+      "value": "games",
+      "type": "multitext"
+    },
+    {
+      "name": "cover",
+      "value": "{{image}}",
+      "type": "text"
+    },
+    {
+      "name": "title",
+      "value": "{{title|split:\\\" on Steam\\\"|first}}",
+      "type": "text"
+    }
+  ],
+  "triggers": [
+    "^https:\\/\\/store\\.steampowered\\.com\\/app\\/\\d+\\/\\S*\\/?$"
+  ],
+  "noteNameFormat": "{{title|split:\" on Steam\"|first}}",
+  "path": "04 - Resources/Media"
+}
