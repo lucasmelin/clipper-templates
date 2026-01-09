@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "name": "Steam Game",
   "behavior": "create",
-  "noteContentFormat": "# {{title|split:\" on Steam\"|first}}\n\n{{description}}",
+  "noteContentFormat": "# {{selector:#appHubAppName}}\n\n{{description}}",
   "properties": [
     {
       "name": "categories",
@@ -31,7 +31,7 @@
     },
     {
       "name": "year",
-      "value": "{{selector:.release_date .date|date:(\\\"YYYY\\\", \\\"DD MMM, YYYY\\\")}}",
+      "value": "{{selector:.release_date .date|date:(\\\"YYYY\\\")}}",
       "type": "number"
     },
     {
@@ -61,13 +61,13 @@
     },
     {
       "name": "title",
-      "value": "{{title|split:\\\" on Steam\\\"|first}}",
+      "value": "{{selector:#appHubAppName}}",
       "type": "text"
     }
   ],
   "triggers": [
-    "^https:\\/\\/store\\.steampowered\\.com\\/app\\/\\d+\\/\\S*\\/?$"
+    "/^https:\\/\\/store\\.steampowered\\.com\\/app\\/\\d+\\/\\S*\\/?$/"
   ],
-  "noteNameFormat": "{{title|split:\" on Steam\"|first}}",
+  "noteNameFormat": "{{selector:#appHubAppName}}",
   "path": "04 - Resources/Media"
 }
