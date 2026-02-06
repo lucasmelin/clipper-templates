@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "name": "IMDB show",
-  "behavior": "create",
+  "behavior": "append-specific",
   "noteContentFormat": "# {{selector:.hero__primary-text}}\n\n## Plot\n\n{{schema:description}}\n\n## Seasons Watched\n\n- [ ] Season 1\n- [ ] Season 2\n- [ ] Season 3\n\n## Notes\n\n",
   "properties": [
     {
@@ -90,7 +90,10 @@
       "type": "text"
     }
   ],
-  "triggers": ["/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+\\/?\\S*$/"],
+  "triggers": [
+    "schema:@TVShow",
+    "/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+\\/?\\S*$/"
+  ],
   "noteNameFormat": "{{selector:.hero__primary-text}}",
   "path": "04 - Resources/Media"
 }

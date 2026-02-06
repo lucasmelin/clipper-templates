@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "name": "IMDB movie",
-  "behavior": "create",
+  "behavior": "append-specific",
   "noteContentFormat": "# {{schema:@Movie:name}}\n\n{{selector:span[data-testid=\"plot-xl\"]}}",
   "properties": [
     {
@@ -85,7 +85,10 @@
       "type": "text"
     }
   ],
-  "triggers": ["/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+\\/?\\S*$/"],
+  "triggers": [
+    "schema:@Movie",
+    "/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+\\/?\\S*$/"
+  ],
   "noteNameFormat": "{{schema:@Movie:name}} ({{schema:datePublished|split:\\\\\\\"-\\\\\\\"|slice:0,1|date:\"YYYY\"}})",
   "path": "04 - Resources/Media"
 }
