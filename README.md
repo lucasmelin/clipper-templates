@@ -9,8 +9,11 @@ To install templates, see instructions in the official [Obsidian Web Clipper doc
 
 ## Templates
 
+- [Default (Generic)](./templates/default-clipper.json)
 - [Goodreads](./templates/goodreads-clipper.json)
 - [IMDB (Movies)](./templates/imdb-movie-clipper.json)
 - [IMDB (TV shows)](./templates/imdb-show-clipper.json)
-- [Steam](./templates/steam-game-clipper.json)
+- [Recipes (Generic)](./templates/recipes-clipper.json)
+- [Steam Game](./templates/steam-game-clipper.json)
 - [Wikipedia](./templates/wikipedia-clipper.json)
+- [YouTube](./templates/youtube-clipper.json)
