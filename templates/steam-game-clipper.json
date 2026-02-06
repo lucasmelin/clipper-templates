@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "name": "Steam Game",
-  "behavior": "create",
+  "behavior": "append-specific",
   "noteContentFormat": "# {{selector:#appHubAppName}}\n\n{{description}}",
   "properties": [
     {
