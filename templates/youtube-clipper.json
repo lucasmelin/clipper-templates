@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "name": "YouTube",
   "behavior": "append-specific",
-  "noteContentFormat": "![{{schema:name}}]({{url}})",
+  "noteContentFormat": "# {{schema:author}} - {{schema:name}} \n\n{{selectorHtml:.ytd-transcript-segment-list-renderer .segment-text|replace:\"&nbsp;\":\" \"|join:\" \"|markdown}}",
   "properties": [
     {
       "name": "title",
@@ -41,6 +41,6 @@
     }
   ],
   "triggers": ["https://www.youtube.com/watch?v="],
-  "noteNameFormat": "{{schema:author}} – {{schema:name}}",
+  "noteNameFormat": "{{schema:author}} - {{schema:name}}",
   "path": "04 - Resources"
 }
