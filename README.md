@@ -11,6 +11,7 @@ To install templates, see instructions in the official [Obsidian Web Clipper doc
 
 - [Default (Generic)](./templates/default-clipper.json)
 - [Goodreads](./templates/goodreads-clipper.json)
+- [Google Maps](./templates/google-maps-clipper.json)
 - [IMDB (Movies)](./templates/imdb-movie-clipper.json)
 - [IMDB (TV shows)](./templates/imdb-show-clipper.json)
 - [Recipes (Generic)](./templates/recipes-clipper.json)
