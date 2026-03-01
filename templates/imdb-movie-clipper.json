@@ -89,6 +89,6 @@
     "schema:@Movie",
     "/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+\\/?\\S*$/"
   ],
-  "noteNameFormat": "{{schema:@Movie:name}} ({{schema:datePublished|split:\\\\\\\"-\\\\\\\"|slice:0,1|date:\"YYYY\"}})",
+  "noteNameFormat": "{{schema:@Movie:name|replace:\":\":\" -\"}} ({{schema:datePublished|split:\\\\\\\"-\\\\\\\"|slice:0,1|date:\"YYYY\"}})",
   "path": "04 - Resources/Media"
 }

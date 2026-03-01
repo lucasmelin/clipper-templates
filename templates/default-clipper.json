@@ -38,9 +38,14 @@
       "name": "tags",
       "value": "clippings",
       "type": "multitext"
+    },
+    {
+      "name": "categories",
+      "value": "[[Clippings]]",
+      "type": "multitext"
     }
   ],
   "triggers": [],
   "noteNameFormat": "{{title}}",
-  "path": "04 - Resources"
+  "path": "04 - Resources/Clippings"
 }

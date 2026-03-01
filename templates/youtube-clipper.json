@@ -36,11 +36,16 @@
     },
     {
       "name": "tags",
-      "value": "videos",
+      "value": "clippings, videos",
+      "type": "multitext"
+    },
+    {
+      "name": "categories",
+      "value": "[[Clippings]]",
       "type": "multitext"
     }
   ],
   "triggers": ["https://www.youtube.com/watch?v="],
   "noteNameFormat": "{{schema:author}} - {{schema:name}}",
-  "path": "04 - Resources"
+  "path": "04 - Resources/Clippings"
 }

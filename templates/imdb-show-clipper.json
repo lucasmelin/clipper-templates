@@ -94,6 +94,6 @@
     "schema:@TVShow",
     "/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+\\/?\\S*$/"
   ],
-  "noteNameFormat": "{{selector:.hero__primary-text}}",
+  "noteNameFormat": "{{selector:.hero__primary-text|replace:\":\":\" -\"}}",
   "path": "04 - Resources/Media"
 }

@@ -42,5 +42,5 @@
   ],
   "triggers": ["/^https:\\/\\/[a-z-.]+\\.wikipedia\\.org\\/wiki\\/.*$/"],
   "noteNameFormat": "{{title|split:\" - Wikipedia\"|first}}",
-  "path": "04 - Resources"
+  "path": "04 - Resources/Clippings"
 }

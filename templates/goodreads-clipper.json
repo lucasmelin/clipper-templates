@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "name": "Goodreads",
   "behavior": "create",
-  "noteContentFormat": "# {{title}}\n\n{{selector:.BookPageMetadataSection__description}}",
+  "noteContentFormat": "# {{selector:.BookPageTitleSection__title h1}}\n\n{{selector:.BookPageMetadataSection__description}}",
   "properties": [
     {
       "name": "categories",
@@ -52,7 +52,7 @@
     {
       "name": "isbn",
       "value": "{{schema:isbn}}",
-      "type": "text"
+      "type": "number"
     },
     {
       "name": "language",
@@ -73,6 +73,6 @@
   "triggers": [
     "/^https:\\/\\/www\\.goodreads\\.com\\/book\\/show\\/\\d*\\S*$/"
   ],
-  "noteNameFormat": "{{selector:.BookPageTitleSection__title h1}}",
+  "noteNameFormat": "{{selector:.BookPageTitleSection__title h1|replace:\":\":\" -\"}}",
   "path": "04 - Resources/Media"
 }
