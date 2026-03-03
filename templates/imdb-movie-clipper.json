@@ -36,7 +36,7 @@
     },
     {
       "name": "runtime",
-      "value": "{{meta:property:og:description|split:\\\" | \\\"|first}}",
+      "value": "{{schema:@Movie:duration|replace:(\\\"PT\\\":\\\"\\\",\\\"H\\\":\\\"h \\\",\\\"M\\\":\\\"m\\\",\\\"S\\\":\\\"s\\\")}}",
       "type": "text"
     },
     {
